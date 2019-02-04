@@ -1,5 +1,5 @@
 ## Files excludes from IntelliJ IDEA ##
-maven/.idea/*
+topic1/*/.idea/*
 .idea/*
 *.iml
 *.iws

@@ -1,4 +1,4 @@
-package com.java.bootcamp;
+package com.java.app-topic1;
 
 import static org.junit.Assert.assertTrue;
 
