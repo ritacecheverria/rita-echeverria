@@ -1,4 +1,4 @@
-package Topic0;
+package Topic0.Point2;
 
 //Ex 2
 //Main Class

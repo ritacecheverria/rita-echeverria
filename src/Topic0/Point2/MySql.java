@@ -1,26 +1,27 @@
+package Topic0.Point2;
+//Ex 2
+//MySql case
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-//Singleton Db Connection Ex 1
+public class MySql extends Conect {
 
-public class SnDbConect {
+  private static Connection con = null;
 
-  private static Connection conn = null;
-
-  public static Connection getConnection() { //method getConnection creation
+  public void ConectDb() {
     try {
-      if (conn == null) {
+      if (con == null) {
         String driver = "com.mysql.jdbc.Driver";
         String url = "jdbc:mysql://";
         String pass = "contraseña";
         String usr = "usuario";
         Class.forName(driver);
-        conn = DriverManager.getConnection(url, usr, pass);
+        con = DriverManager.getConnection(url, usr, pass);
       }
     } catch (ClassNotFoundException | SQLException e) {
       e.printStackTrace();
     }
-    return conn;
+
   }
 }

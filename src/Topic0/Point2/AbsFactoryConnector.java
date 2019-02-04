@@ -1,13 +1,11 @@
-package Topic0;
+package Topic0.Point2;
 
-import java.sql.*;
 import java.lang.*;
 import java.lang.String;
-import java.lang.Integer;
 
 //Ex 2
 
-public abstract class AbsFactory {
+public abstract class AbsFactoryConnector {
 
   String type = "tipo";
   String driver = "com.mysql.jdbc.Driver";
@@ -19,17 +17,18 @@ public abstract class AbsFactory {
   public String getConection(String type, String driver, String url, String pass, String usr) {
     String option = type;
     if (option == "Oracle") {
-      Oracle oracled = new Oracle();
-      oracled.ConectDb();
+      Oracle oracled = new Oracle ();
+      oracled.ConectDb ();
     } else if (option == "Postgre") {
-      Postgre postgred = new Postgre();
-      postgred.ConectDb();
+      Postgre postgred = new Postgre ();
+      postgred.ConectDb ();
     } else if (option == "MySql") {
-      MySql mysqld = new MySql();
-      mysqld.ConectDb();
+      MySql mysqld = new MySql ();
+      mysqld.ConectDb ();
     } else {
-      System.out.println("No existe esa conexion");
+      throw new IllegalArgumentException ("Unable to recognice " + type);
     }
+
     return null;
   }
 }
