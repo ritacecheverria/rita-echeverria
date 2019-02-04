@@ -1,8 +1,10 @@
 ## Files excludes from IntelliJ IDEA ##
+maven/.idea/*
 .idea/*
 *.iml
 *.iws
 *.ipr
+*.xml
 
 ## Compiled source ##
 
