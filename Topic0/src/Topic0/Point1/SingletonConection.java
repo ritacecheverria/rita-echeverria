@@ -2,6 +2,7 @@ package Topic0.Point1;
 //Singleton Db Connection Ex 1
 
 import java.sql.*;
+import java.lang.*;
 
 public class SingletonConection {
 
@@ -17,8 +18,7 @@ public class SingletonConection {
       conn = (SingletonConection) DriverManager.getConnection (url);
     }
     catch(ClassNotFoundException | SQLException e){
-      e.printStackTrace();
-    }
+     }
   }
 
   //method getConn creation
