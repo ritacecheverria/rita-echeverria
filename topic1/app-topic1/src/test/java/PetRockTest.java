@@ -7,6 +7,6 @@ public class PetRockTest {
   @Test
   public void getName() {
     PetRock rock = new PetRock ("Rocky");
-    assert (rock.getName(),"Rocky");
+    assertEquals (rock.getName(),"Rocky");
   }
 }
