@@ -10,7 +10,7 @@ public class RecentListTest {
 
   @Test
   public void emptyRecentList() {
-    RecentList recentList = new RecentList ();
-    assertTrue (RecentList.getRecentList().isEmpty());
+    RecentList fileList = new RecentList();
+    assertTrue (RecentList.getFileList().isEmpty());
   }
 }
