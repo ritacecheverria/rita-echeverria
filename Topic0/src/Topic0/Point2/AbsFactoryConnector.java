@@ -15,18 +15,21 @@ public abstract class AbsFactoryConnector {
 
   //Connect according Db Type
   public String getConection(String type, String driver, String url, String pass, String usr) {
-    String option = type;
-    if (option == "Oracle") {
-      Oracle oracled = new Oracle ();
-      oracled.ConectDb ();
-    } else if (option == "Postgre") {
-      Postgre postgred = new Postgre ();
-      postgred.ConectDb ();
-    } else if (option == "MySql") {
-      MySql mysqld = new MySql ();
-      mysqld.ConectDb ();
-    } else {
-      throw new IllegalArgumentException ("Unable to recognice " + type);
+    switch (type) {
+      case "Oracle":
+        Oracle oracled = new Oracle ();
+        oracled.ConectDb ();
+        break;
+      case "Postgre":
+        Postgre postgred = new Postgre ();
+        postgred.ConectDb ();
+        break;
+      case "MySql":
+        MySql mysqld = new MySql ();
+        mysqld.ConectDb ();
+        break;
+      default:
+        throw new IllegalArgumentException ("Unable to recognice " + type);
     }
 
     return null;

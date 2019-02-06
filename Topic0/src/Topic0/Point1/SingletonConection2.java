@@ -1,8 +1,12 @@
-package Topic0.Point1.Version2;
-import Topic0.Point1.SingletonConection;
+package Topic0.Point1;
+//Singleton Db Connection Ex 1
+
 import java.lang.*;
 
+//Singleton Eager  Instantiation
 public class SingletonConection2 {
+
+
   //create an object of SingletonConection class
   private static SingletonConection2 conn = new SingletonConection2 ();
   private static String driver;
@@ -14,9 +18,6 @@ public class SingletonConection2 {
 
   //method getConn creation
   public static SingletonConection2 getConn() {
-    if (conn==null){
-      conn = new SingletonConection2 ();
-    }
     return conn;
   }
 
