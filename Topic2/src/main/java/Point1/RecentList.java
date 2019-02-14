@@ -1,33 +1,41 @@
 package Point1;
 
-import java.io.File;
-import java.util.ArrayList;
+import java.util.LinkedList;
 
 
 public class RecentList {
 
 
-  private static ArrayList<File> fileList;
-  private int listSize;
+  private static LinkedList<String> fileList;
+  private int listSize = 15;
 
   public RecentList() {
-    this.listSize = listSize;
-    this.fileList = new ArrayList<File>(listSize);
+   fileList = new LinkedList<>();
   }
 
-  public static ArrayList<File> getFileList() {
+  public static LinkedList<String> getFileList() {
     return fileList;
   }
 
-  public int getListSize() {
-    return listSize;
+   public void setFileList(LinkedList<String> fileList) {
+    RecentList.fileList = fileList;
   }
 
-  public void setFileList(ArrayList<File> fileList) {
-    this.fileList = fileList;
+  /*If list contains file, put it on the top of the list.
+  If list is full, remove last element. */
+
+  public void addFile (String file){
+    if (fileList.contains(file)) {
+      fileList.set(0, file);
+
+    } else if (fileList.size() == listSize) {
+        fileList.removeLast();
+        fileList.addFirst(file);
+    }
+      else {
+        fileList.addFirst(file);
+      }
+    }
   }
 
-  public void setListSize(int listSize) {
-    this.listSize = listSize;
-  }
-}
+
